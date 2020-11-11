@@ -1,18 +1,26 @@
 public class Ex110{
   public static void main(String[] args){
 
+//底
     int x = 2;
-    System.out.println("Exercise1-8 x = " + x);
+    System.out.println("Exercise110 x = " + x);
 
-//指数
-    int y = x^2;
-    System.out.println("Exercise1-8 x = " + x1);
+//指数と答え
+    int result = 0;
+    for(int n = 1; n <= 3; n++){
+      result = (int) Math.pow(x, n);
+      System.out.println("xの" + n + "乗＝" + result);
+    }
 
-    int x2 = x^3;
-    System.out.println("Exercise1-8 x = " + x2);
+/*
+    n = 2;
+    result = (int) Math.pow(x, n);
+    System.out.println("Exercise1-8 x = " + result);
     
-    int x3 = x^4;
-    System.out.println("Exercise1-8 x = " + x3);
+    n = 3;
+    result = (int) Math.pow(x, n);
+    System.out.println("Exercise1-8 x = " + result);
+    */
   }
 
 }
