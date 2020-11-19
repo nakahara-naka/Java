@@ -13,6 +13,7 @@ class SquareRectangle{
     for (int i = 1; i <= n; i++){
       putChars('+', n);
       System.out.println();
+    }
   }
 
   //--- 文字'*'を並べて高さhで幅wの長方形を表示 ---//
