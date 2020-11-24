@@ -1,12 +1,6 @@
 //銀行口座クラス（第一版）とそれをテストするクラス
 
 
-//銀行口座クラス（第一版）
-class Account{
-  String name; //口座名義
-  String no;   //口座番号
-  long balance;//預金残高
-}
 
 //銀行口座クラスをテストするクラス
 class AccountTester{
@@ -38,4 +32,11 @@ class AccountTester{
     System.out.println("  預金残高：" + nakata.balance);
 
   }
+}
+
+//銀行口座クラス（第一版）
+class Account{
+  String name; //口座名義
+  String no;   //口座番号
+  long balance;//預金残高
 }

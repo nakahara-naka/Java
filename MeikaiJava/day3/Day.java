@@ -1,4 +1,4 @@
-//日付クラスDay（第二版）
+//日付クラスDay（第３版）
 
 public class Day{
   private int year = 1;
