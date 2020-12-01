@@ -17,6 +17,13 @@ public class Judgement{
   public int Silver(int[] computer, int[] user){
     int r = 0;
     for (int i = 0; i < computer.length; i++){
+      if (computer[i] != user[i]){
+        for (int j = 0; j < computer.length; j++){
+          if (computer[i] == user[j]){
+            r += 1;
+          }
+        }
+      }
     }
     return r;
   }

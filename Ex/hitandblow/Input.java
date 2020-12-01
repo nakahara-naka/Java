@@ -22,7 +22,7 @@ public class Input{
       for (int j = 0; j < r.length; j++){
         //if(i != j && dup == r[j] ){
         if(i != j && r[i] == r[j] ){
-          System.out.println("ダブり" + r[j]); //チェック用
+          //System.out.println("ダブり" + r[j]); //チェック用
           while(true){
             r[j] = rand.nextInt(8) + 1;
             int count = 0; //重複チェック用カウンタ
