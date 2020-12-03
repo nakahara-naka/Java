@@ -3,6 +3,8 @@ package hitandblow2;
 import java.util.Scanner;
 import java.util.Random;
 import java.util.Arrays;
+import java.util.List;
+import java.util.HashSet;
 
 public class Input{
 
@@ -43,14 +45,25 @@ public class Input{
 
   public int[] user(){
     Scanner stdIn = new Scanner(System.in);
-    int[] n = new int[4]; //ユーザが選ぶ配列
+    int[] n = new int[4]; //ユーザが選ぶ配列(戻り値）
 
     System.out.print("４つの数字（例：1234）:");
     String s = stdIn.next();
-    
+    List<String> list = Arrays.asList(s.split(""));
+
+    //正規表現で４桁の数字以外が入ってたら再度入力させる
+    //if(!(s.matches("[1-8]{4}") && s.length() == 4)){
+    //重複もエラーではじく
+    if(!(s.matches("[1-8]{4}") && list.size() == new HashSet<>(list).size())){
+      System.out.println("入力ミスです。4桁の重複しない半角数字を入力してください。");
+      n = user();
+    }
+
     for (int i = 0; i < s.length(); i++){
       n[i] = Character.getNumericValue(s.charAt(i));
     }
+
+
     //System.out.println("test");
     return n;
   }
