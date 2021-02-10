@@ -29,7 +29,7 @@ public class HorzLine extends AbstLine{
    * 長さの個数だけ'-'を連続表記して改行します。
    */
   public void draw() {
-    for (int i = 1; i <= getLength; i++)
+    for (int i = 1; i <= getLength(); i++)
       System.out.print('-');
     System.out.println();
   }

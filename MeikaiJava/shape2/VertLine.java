@@ -29,7 +29,7 @@ public class VertLine extends AbstLine {
    * 長さの個数だけ'|'を表示して改行するのを繰り返します。
    */
   @Override public void draw() {
-    for (i = 1; i <= getLength(); i++) 
+    for (int i = 1; i <= getLength(); i++) 
       System.out.println('|');
   }
 }
