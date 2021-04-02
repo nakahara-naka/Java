@@ -18,12 +18,13 @@ public final class Notifier {
     = new HashMap<>();
   private volatile boolean active = true;
 
-  //メソッド
+  //メソッド(ゲッタ）
   public static Notifier getInstance() { return INSTANCE; }
 
   //コンストラクタ
   private Notifier() {}
 
+  //利用者名とその携帯端末名を登録
   public void register(String user, MobileDevice device) {
     synchronized (lock) {
       List<MobileDevice> devices = userMobileDevices.get(user);
@@ -35,6 +36,7 @@ public final class Notifier {
     }
   }
 
+  //指定された利用者名で登録されている携帯端末にメッセージを配信
   public void send(String user, String message) {
     List<MobileDevice> devices = new ArrayList<>();
     synchronized (lock) {
@@ -58,6 +60,7 @@ public final class Notifier {
     }
   }
 
+  //通知メッセージがあれば端末のリスナに通知、なければ待ち受けにする
   public void loopForMessages(MobileDevice device){
     while (active){
       List<String> messageList;
@@ -78,6 +81,7 @@ public final class Notifier {
     }
   }
 
+  //未配信の全メッセージ、全登録情報を削除、通知システムを停止
   public void shutdown(){
     active = false;
     List<MobileDevice> devices = new ArrayList<>();
