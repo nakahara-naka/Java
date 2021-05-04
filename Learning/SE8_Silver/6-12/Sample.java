@@ -5,10 +5,12 @@ public class Sample{
   private int age = 50; 
   private String email = "y.dust.and.bones@gmail.com";
 
-  private Sample(){}
+  public Sample(){
+    this("n", 12, "e");
+  }
 
-  public Sample(String n){
-    this();
+  private Sample(String n, int a, String e){
+    super();
   }
 
   String getName(){
